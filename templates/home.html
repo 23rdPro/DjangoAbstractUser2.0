@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container justify-content-center">
+	<br><br>
+	<form method="post" action="">{% csrf_token %}
+	  <div class="form-row">
+	    <div class="form-group col-md-4">
+	      <label for="id_first_name">*First Name</label>
+	      <input type="text" name="first_name" maxlength="30" class="form-control" id="id_first_name" placeholder="">
+	    </div>
+	    <div class="form-group col-md-4">
+	      <label for="id_last_name">*Last Name</label>
+	      <input type="text" name="last_name" maxlength="30" class="form-control" id="id_last_name" placeholder="">
+	    </div>
+	    <div class="form-group col-md-4">
+	      <label for="id_username">*Username</label>
+	      <input type="text" name="username" maxlength="30" class="form-control" required id="id_username" placeholder="">
+	      {{ form.username.errors }}
+	      <!-- <span class="helptext">Letters and digits</span> -->
+	    </div>
+	    
+	  </div>
+
+	  <div class="form-row">
+	    <div class="form-group col-md-4">
+	      <label for="id_date_of_birth">*Birthday</label>
+	      <input type="text" name="date_of_birth" required id="id_date_of_birth" class="form-control" placeholder="">
+	    </div>
+	    <div class="form-group col-md-4">
+	      <label for="id_password1">*Password</label>
+	      <input type="password" name="password1" class="form-control" required id="id_password1" placeholder="">
+	      <!-- <span class="helptext">Required</span> -->
+	    </div>
+	    <div class="form-group col-md-4">
+	      <label for="id_password2">*Confirm Password</label>
+	      <input type="password" name="password2" class="form-control" required id="id_password2" placeholder="">
+	      	{{ form.password2.errors }}
+	    </div>
+	  </div>
+
+	  <div class="form-row">
+	    <div class="form-group col-md-3">
+	      <label for="id_gender">*Gender</label>
+
+	      {% load widget_tweaks %}
+			{% render_field form.gender class+="form-control" %}
+	    </div>
+	    <div class="form-group col-md-3">
+	      <label for="id_marital_status">*Marital Status</label>
+	      {% load widget_tweaks %}
+			{% render_field form.marital_status class+="form-control" %}
+	    </div>
+	    <div class="form-group col-md-3">
+	      <label for="id_number_of_children">nos Of Children</label>
+	      <input type="number" class="form-control" 
+	      id="id_number_of_children" name="number_of_children">
+	    </div>
+	    <div class="form-check">
+	    	
+      <input class="form-check-input is-invalid" type="checkbox" value="" id="invalidCheck3" required>
+      <label class="form-check-label" for="invalidCheck3">
+        Agree to terms and conditions
+      </label>
+      <div class="invalid-feedback">
+        You must agree before submitting.
+      </div>
+    </div>
+	  </div>
+
+
+	  
+
+	  <div class="form-row">
+	    <div class="form-group col-md-4">
+	      <button type="submit" value="" class="btn btn-primary">Submit</button>
+	      <!-- <button type="submit" value="" class="btn btn-primary">Submit</button> -->
+	    </div>
+
+	  </div>
+
+
+	
+
+	</form>
+</div>
+{% endblock %}
+
+

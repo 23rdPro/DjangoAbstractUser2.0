@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block content %}
+<section><br><br>
+	
+<div class="container">
+	
+<div class="row">
+
+    <div class="col-6"><br>
+    	<h4>{{ title }}<span>
+    		{% if user.is_authenticated %}
+				<b>{{user.first_name}} {{user.last_name}}</b>
+		{% endif %}
+    	</span></h4>
+    	
+      <p>Apparently we had reached a great height in the atmosphere,<br> for the sky was a dead black, and the stars had ceased to <br>twinkle. <br><br>By the same illusion which lifts the horizon of the sea to the level of the spectator <br> on a hillside, the sable cloud beneath was dished out,<br> and the car seemed to float in the middle of an immense dark sphere, <br><br>whose upper half was strewn with silver. Looking down into the dark gulf below, I could see a ruddy light streaming through a rift in the clouds.</p>
+
+      <p>Apparently we had reached a great height in the atmosphere,<br> for the sky was a dead black, and the stars had ceased to <br>twinkle. <br><br>By the same illusion which lifts the horizon of the sea to the level of the spectator <br> on a hillside, the sable cloud beneath was dished out,<br> and the car seemed to float in the middle of an immense dark sphere, <br><br>whose upper half was strewn with silver. Looking down into the dark gulf below, I could see a ruddy light streaming through a rift in the clouds.</p>
+    </div>
+    <div class="col-6"><br><br><br>
+      <p>Apparently we had reached a great height in the atmosphere,<br> for the sky was a dead black, and the stars had ceased to <br>twinkle. <br><br>By the same illusion which lifts the horizon of the sea to the level of the spectator <br> on a hillside, the sable cloud beneath was dished out,<br> and the car seemed to float in the middle of an immense dark sphere, <br><br>whose upper half was strewn with silver. Looking down into the dark gulf below, I could see a ruddy light streaming through a rift in the clouds.</p>
+
+      <p>Apparently we had reached a great height in the atmosphere,<br> for the sky was a dead black, and the stars had ceased to <br>twinkle. <br><br>By the same illusion which lifts the horizon of the sea to the level of the spectator <br> on a hillside, the sable cloud beneath was dished out,<br> and the car seemed to float in the middle of an immense dark sphere, <br><br>whose upper half was strewn with silver. Looking down into the dark gulf below, I could see a ruddy light streaming through a rift in the clouds.</p>
+    </div>
+  </div>
+  </div>
+  </section>
+
+
+{% endblock %}
+
+
+{% if user.is_authenticated %}
+		<div>
+			<p>{{ user.first_name }} {{user.last_name }}</p>
+			<p>Your Gender is {{user.gender}}</p>
+		</div>
+	{% else %}
+		<div>
+			<a href="{% url 'home' %}">Click to Signup</a>
+		</div>
+	{% endif %}
