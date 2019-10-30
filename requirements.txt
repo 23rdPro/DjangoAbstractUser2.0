@@ -12,7 +12,7 @@ jdcal==1.4.1
 mysqlclient==1.4.4
 odfpy==1.4.0
 openpyxl==2.6.3
-Pillow==6.1.0
+Pillow==6.2.0
 pycparser==2.19
 Pyphen==0.9.5
 pytz==2019.2
